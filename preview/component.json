@@ -42,7 +42,8 @@
     "noflo/noflo-amd": "*",
     "noflo/noflo-react": "*",
     "noflo/noflo-peer": "*",
-    "visionmedia/superagent": "0.21.0"
+    "visionmedia/superagent": "0.21.0",
+    "adelyte-will/noflo-logic": "*"
   },
   "json": [
     "component.json"

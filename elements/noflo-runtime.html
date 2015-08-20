@@ -11,7 +11,7 @@
         top: 0;
         color: hsl(189, 50%, 80%);
         width: 288px;
-        height: 72px;
+        /*height: 72px;*/
         background-color: hsla(0, 0%, 0%, 0.98) !important;
         background-image: radial-gradient(1px at 0px 0px, hsl(210, 50%, 60%) 0.5px, hsla(0, 0%, 0%, 0) 1px);
         background-size: calc(100% - 1px);
@@ -79,6 +79,15 @@
         color: hsl(189, 50%, 80%);
       }
 
+      #debugging h2 {
+        position: absolute;
+        left: 54px;
+        top: 72px;
+      }
+      #debugging button {
+        color: hsl(189, 50%, 80%);
+      }
+
       #select {
         text-align: center;
       }
@@ -117,6 +126,10 @@
             <h2>{{ execution.label }}</h2>
           </template>
         </div>
+        <div id="debugging">
+          <button title="Log" class="log" on-click="{{ log }}"><i class="fa fa-pencil"></i></button>
+          <h2>log graph</h2>
+        </div>
       </template>
       <template if="{{ !runtime }}">
         <div id="select">
@@ -138,6 +151,10 @@
       card: null,
       panel: null,
       wasConnected: false,
+      log: function () {
+        var JSONGraph = JSON.stringify(this.graph);
+        console.log(JSONGraph);
+      },
       clearRuntime: function () {
         for (var i = 0; i < this.runtimes.length; i++) {
           if (this.runtimes[i].graph === this.graph.properties.id) {
@@ -266,9 +283,9 @@
         preview.returnTo = this.parentNode;
         this.card.appendChild(preview);
         this.card.addTo(this.panel.getMain());
-        if (this.runtime.definition.protocol === 'iframe') {
+        /*if (this.runtime.definition.protocol === 'iframe') {
           this.panel.open = true;
-        }
+        }*/
       },
       hideCard: function () {
         if (!this.card) {

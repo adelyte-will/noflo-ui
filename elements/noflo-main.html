@@ -164,7 +164,7 @@
     </style>
     <noflo-account id="mainaccount" user="{{ user }}" avatar="{{ avatar }}" plan="{{ plan }}"></noflo-account>  
     <div id="loginrequired"></div>
-         <section id="projects">
+      <section id="projects">
         <h2>Projects
             <template if="{{ projectList === 'local' }}">
             <small>{{ localProjects.length }}</small>
@@ -176,7 +176,7 @@
             <button on-click="{{ fetchGithub }}"><i id="fetchgithub" class="fa fa-refresh"></i></button>
             </template>
         </h2>
-        <ul class="tabs">
+        <!-- <ul class="tabs">
           <template if="{{ projectList === 'local' }}">
             <li class="selected">On device</li>
             <template if="{{ githubToken }}">
@@ -187,7 +187,7 @@
           <li on-click="{{ openLocal }}">On device</li>
             <li class="selected">GitHub</li>
           </template>
-        </ul>
+        </ul> -->
         <ul class="projects">
           <template if="{{ projectList === 'local' }}">
           <li class="add">
@@ -221,7 +221,7 @@
           </template>
         </ul>
       </section>
-    <section id="runtimes">
+    <!-- <section id="runtimes">
       <h2>
         Runtimes <small>{{ userRuntimes.length }} / {{ runtimes.length }}</small>
         <button on-click="{{ fetchRuntimes }}"><i id="fetchruntimes" class="fa fa-refresh"></i></button>
@@ -247,7 +247,7 @@
           </li>
         </template>
       </ul>
-    </section>
+    </section> -->
     <div id="loginrequiredChrome">
       <section id="examples">
         <h2>
@@ -274,12 +274,16 @@
       userRuntimes: [],
       examples: [
         {
-          label: 'Photo booth',
-          id: '7804187'
+          label: 'Logic gates',
+          id: '992f4940eeebdbeae7ef'
         },
         {
           label: 'Animated clock',
           id: '7135158'
+        }
+        /*{
+          label: 'Photo booth',
+          id: '7804187'
         },
         {
           label: 'Cam to palette',
@@ -304,7 +308,7 @@
         {
           label: 'Web Audio',
           id: '04847249319d2326fa92'
-        }
+        }*/
       ],
       githubToken: '',
       gridToken: '',
